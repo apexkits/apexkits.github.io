@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Kits — Official European Club Store</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("BUYyTvdnj96iE6eE5");
+   })();
+</script>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif; }
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body { 
+  background: #09090b;
+  color: #f4f4f5; 
+  overflow-x: hidden;
+}
+
+header { 
+  background: rgba(9, 9, 11, 0.85); 
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: grid; 
+  grid-template-columns: 1fr auto 1fr; 
+  align-items: center; 
+  padding: 18px 40px; 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); 
+  position: fixed; 
+  top: 0; left: 0; width: 100%; 
+  z-index: 1000; 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
+}
+
+.logo { 
+  font-family: 'Outfit', sans-serif;
+  font-size: 22px; 
+  font-weight: 800; 
+  color: #ffffff; 
+  text-decoration: none; 
+  text-transform: uppercase; 
+  letter-spacing: 1.5px; 
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  justify-self: center;
+}
+
+.logo-badge {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 18px;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+.logo span { color: #3b82f6; }
+
+nav {
+  display: flex;
+  gap: 28px;
+  justify-self: end;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #a1a1aa;
+  font-weight: 600;
+  font-size: 14px;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+nav a:hover {
+  color: #3b82f6;
+}
+
+.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: #60a5fa !important;
+}
+
+.cart-link:hover {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.page-view {
+  display: none;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  min-height: 100vh;
+  padding-top: 100px;
+}
+
+.page-view.active {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#home-view {
+  height: 100vh;
+  padding-top: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: linear-gradient(135deg, rgba(9, 9, 11, 0.92) 0%, rgba(16, 46, 22, 0.75) 100%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3clinearGradient id='turf' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230f2b14'/%3E%3Cstop offset='100%25' stop-color='%2308180b'/%3E%3C/linearGradient%3E%3C/defs%3E%3crect width='1200' height='800' fill='url(%23turf)'/%3E%3crect x='0' y='0' width='1200' height='100' fill='%23ffffff' fill-opacity='0.025'/%3E%3crect x='0' y='200' width='1200' height='100' fill='%23ffffff' fill-opacity='0.025'/%3E%3crect x='0' y='400' width='1200' height='100' fill='%23ffffff' fill-opacity='0.025'/%3E%3crect x='0' y='600' width='1200' height='100' fill='%23ffffff' fill-opacity='0.025'/%3E%3Cg stroke='%23ffffff' stroke-opacity='0.35' stroke-width='4' fill='none'%3E%3crect x='100' y='50' width='1000' height='700' rx='10'/%3E%3cline x1='600' y1='50' x2='600' y2='750'/%3E%3ccircle cx='600' cy='400' r='90'/%3E%3ccircle cx='600' cy='400' r='6' fill='%23ffffff' fill-opacity='0.35'/%3E%3crect x='100' y='200' width='180' height='400'/%3E%3crect x='100' y='300' width='70' height='200'/%3E%3ccircle cx='220' cy='400' r='6' fill='%23ffffff' fill-opacity='0.35'/%3E%3cpath d='M 280 320 A 90 90 0 0 1 280 480'/%3E%3crect x='920' y='200' width='180' height='400'/%3E%3crect x='1030' y='300' width='70' height='200'/%3E%3ccircle cx='980' cy='400' r='6' fill='%23ffffff' fill-opacity='0.35'/%3E%3cpath d='M 920 320 A 90 90 0 0 0 920 480'/%3E%3cpath d='M 100 80 A 30 30 0 0 0 130 50'/%3E%3cpath d='M 100 720 A 30 30 0 0 1 130 750'/%3E%3cpath d='M 1100 80 A 30 30 0 0 1 1070 50'/%3E%3cpath d='M 1100 720 A 30 30 0 0 0 1070 750'/%3E%3C/g%3E%3C/svg%3E") no-repeat center center/cover;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.95);
+  color: #3b82f6;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+#home-view h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  max-width: 1000px;
+  color: #ffffff;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+#home-view h1 span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #60a5fa;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.95), 0 0 20px rgba(96, 165, 250, 0.4);
+  white-space: nowrap;
+}
+
+#home-view p {
+  color: #f1f5f9;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 36px;
+  max-width: 700px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn-primary, .btn-secondary {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+}
+
+.btn-primary:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary:hover {
+  background: #ffffff;
+  border-color: #94a3b8;
+}
+
+section { 
+  padding: 50px 20px; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  width: 100%;
+  flex: 1;
+}
+
+.title { 
+  font-family: 'Outfit', sans-serif;
+  text-align: center; 
+  margin-bottom: 45px; 
+  color: #ffffff; 
+  font-size: 32px; 
+  font-weight: 700;
+  position: relative; 
+  text-transform: uppercase; 
+  letter-spacing: 1.5px; 
+}
+.title::after { 
+  content: ''; 
+  display: block; 
+  width: 50px; 
+  height: 3px; 
+  background: #3b82f6; 
+  margin: 12px auto 0; 
+  border-radius: 2px; 
+  box-shadow: 0 0 10px #3b82f6;
+}
+
+.cards { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+  gap: 28px; 
+}
+
+.card { 
+  background: #121216; 
+  border-radius: 16px; 
+  padding: 24px; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); 
+  text-align: center; 
+  border: 1px solid rgba(255, 255, 255, 0.06); 
+  transition: all 0.3s ease; 
+  cursor: pointer;
+}
+.card:hover { 
+  transform: translateY(-6px); 
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.card img { 
+  width: 100%;
+  border-radius: 10px; 
+  height: 240px; 
+  object-fit: contain; 
+  padding: 12px;
+  background: #ffffff;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.card-price {
+  font-family: 'Outfit', sans-serif;
+  color: #60a5fa;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+#hall-of-fame-view .card img {
+  object-fit: cover;
+  object-position: top center;
+  padding: 0;
+  background: none;
+}
+#hall-of-fame-view .card {
+  cursor: default;
+}
+#hall-of-fame-view .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.card h4 { 
+  font-family: 'Outfit', sans-serif;
+  margin: 18px 0 6px; 
+  color: #ffffff; 
+  font-size: 20px; 
+  font-weight: 700; 
+}
+
+.card p { 
+  color: #a1a1aa; 
+  font-size: 13.5px; 
+  line-height: 1.5; 
+}
+
+.product-detail-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  background: #121216;
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.product-gallery-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-image-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+  cursor: grab;
+  overflow: hidden;
+  height: 420px;
+  user-select: none;
+}
+
+.product-image-box:active {
+  cursor: grabbing;
+}
+
+.product-image-box img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  transition: transform 0.1s ease-out;
+  pointer-events: none;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.zoom-hint {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.product-thumbnails {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.thumb-item {
+  width: 70px;
+  height: 70px;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.thumb-item:hover, .thumb-item.active {
+  border-color: #3b82f6;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.3);
+}
+
+.product-info h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #60a5fa;
+  margin-bottom: 20px;
+}
+
+.product-desc {
+  color: #a1a1aa;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.selector-group {
+  margin-bottom: 20px;
+}
+
+.selector-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+  color: #d4d4d8;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sizes {
+  display: flex;
+  gap: 10px;
+}
+
+.size-btn {
+  background: #18181c;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #f4f4f5;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.size-btn:hover, .size-btn.selected {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  background: #18181c;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  width: fit-content;
+  overflow: hidden;
+}
+
+.qty-btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.qty-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#product-qty {
+  padding: 0 14px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  color: #a1a1aa;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.back-btn:hover {
+  color: #ffffff;
+}
+
+.cart-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #121216;
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 10px;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-details h4 {
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.cart-item-details p {
+  color: #a1a1aa;
+  font-size: 13px;
+}
+
+.cart-item-price {
+  font-family: 'Outfit', sans-serif;
+  color: #60a5fa;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.cart-remove-btn {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.cart-remove-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.cart-summary {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-total {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.cart-total span {
+  color: #60a5fa;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 40px;
+  color: #71717a;
+  font-size: 16px;
+}
+
+.contact-container {
+  background: #121216;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: #18181c;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+  color: #71717a;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  height: 120px;
+}
+
+.contact-form button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+}
+
+.contact-form button:hover {
+  background: #2563eb;
+  box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6);
+}
+
+footer { 
+  background: #09090b; 
+  color: #71717a; 
+  text-align: center; 
+  padding: 30px; 
+  font-size: 13px; 
+  border-top: 1px solid rgba(255, 255, 255, 0.06); 
+  margin-top: 60px;
+}
+
+@media(max-width: 768px) {
+  .product-detail-container, .checkout-container {
+    grid-template-columns: 1fr !important;
+    padding: 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div></div>
+  <a onclick="switchPage('home')" class="logo">
+    <div class="logo-badge">▲</div>
+    Apex <span>Kits</span>
+  </a>
+  <nav>
+    <a onclick="switchPage('home')">Home</a>
+    <a onclick="switchPage('store')">Store</a>
+    <a onclick="switchPage('hall-of-fame')">Hall of Fame</a>
+    <a onclick="switchPage('cart')" class="cart-link">🛒 Cart (<span id="cart-count">0</span>)</a>
+    <a onclick="switchPage('contact')">Contact</a>
+  </nav>
+</header>
+
+<!-- HOME PAGE VIEW -->
+<div id="home-view" class="page-view active">
+  <div class="hero-badge">⚽ Matchday Atmosphere</div>
+  <h1>Elevate Your Matchday Style with <span>Apex&nbsp;Kits</span></h1>
+  <p>Welcome to the ultimate digital showcase for top European football club jerseys. Explore iconic designs from the world's most elite clubs, carefully curated for passionate fans and collectors.</p>
+  <div class="hero-buttons">
+    <a onclick="switchPage('store')" class="btn-primary">Browse Store</a>
+    <a onclick="switchPage('hall-of-fame')" class="btn-secondary">Explore Hall of Fame</a>
+  </div>
+</div>
+
+<!-- STORE PAGE VIEW -->
+<div id="store-view" class="page-view">
+  <section>
+    <h2 class="title">Official Football Jersey Store</h2>
+    <div class="cards" id="kit-cards-grid">
+      <!-- Populated dynamically via JS -->
+    </div>
+  </section>
+  <footer>
+    Apex Kits &mdash; Official European Club Apparel Store Project
+  </footer>
+</div>
+
+<!-- PRODUCT DETAIL VIEW -->
+<div id="product-view" class="page-view">
+  <section>
+    <button class="back-btn" onclick="switchPage('store')">← Back to Store</button>
+    <div class="product-detail-container">
+      <div class="product-gallery-wrapper">
+        <div class="product-image-box" id="product-img-box">
+          <img id="detail-img" src="" alt="Kit Detail">
+          <div class="zoom-hint">🔍 Scroll to Zoom • Click & Drag to Move</div>
+        </div>
+        <div class="product-thumbnails" id="product-thumbnails-container">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+      <div class="product-info">
+        <h2 id="detail-title"></h2>
+        <div class="product-price" id="detail-price"></div>
+        <p class="product-desc" id="detail-desc"></p>
+        
+        <div class="selector-group">
+          <label>Select Size</label>
+          <div class="sizes">
+            <button class="size-btn selected" onclick="selectSize(this)">S</button>
+            <button class="size-btn" onclick="selectSize(this)">M</button>
+            <button class="size-btn" onclick="selectSize(this)">L</button>
+            <button class="size-btn" onclick="selectSize(this)">XL</button>
+            <button class="size-btn" onclick="selectSize(this)">XXL</button>
+          </div>
+        </div>
+
+        <div class="selector-group">
+          <label>Quantity</label>
+          <div class="quantity-controls">
+            <button class="qty-btn" onclick="changeQuantity(-1)">-</button>
+            <span id="product-qty">1</span>
+            <button class="qty-btn" onclick="changeQuantity(1)">+</button>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; margin-top: 15px;">
+          <button class="btn-secondary" style="flex: 1; text-align: center; padding: 14px;" onclick="addToCart()">Add to Cart</button>
+          <button class="btn-primary" style="flex: 1; text-align: center; padding: 14px;" onclick="buyNow()">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    Apex Kits &mdash; Official European Club Apparel Store Project
+  </footer>
+</div>
+
+<!-- CHECKOUT PAGE VIEW -->
+<div id="checkout-view" class="page-view">
+  <section>
+    <button class="back-btn" onclick="switchPage('product')">← Back to Product</button>
+    <h2 class="title">Secure Checkout</h2>
+    <div class="checkout-container" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px; max-width: 1000px; margin: 0 auto;">
+      <div class="checkout-form-box" style="background: #121216; padding: 30px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.06);">
+        <h3 style="font-family: 'Outfit', sans-serif; margin-bottom: 20px; font-size: 20px; color: #fff;">Shipping Information</h3>
+        <form id="checkout-form" class="contact-form" onsubmit="handleCheckoutSubmit(event)">
+          <input type="text" id="chk_name" placeholder="Full Name" required>
+          <input type="email" id="chk_email" placeholder="Email Address" required>
+          <input type="text" id="chk_address" placeholder="Street Address" required>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <input type="text" id="chk_city" placeholder="City" required>
+            <input type="text" id="chk_zip" placeholder="Postal / Zip Code" required>
+          </div>
+          <input type="text" id="chk_country" placeholder="Country" required>
+          
+          <h3 style="font-family: 'Outfit', sans-serif; margin: 20px 0 10px; font-size: 20px; color: #fff;">Promo / Coupon Code</h3>
+          <input type="text" id="chk_coupon" placeholder="Enter any 5 numbers (e.g. 12345)" maxlength="5" oninput="checkCoupon(this.value)">
+          <div id="coupon-feedback" style="font-size: 12px; margin-top: 5px; color: #60a5fa; font-weight: 600;"></div>
+
+          <div id="payment-section">
+            <h3 style="font-family: 'Outfit', sans-serif; margin: 20px 0 10px; font-size: 20px; color: #fff;">Payment Details (Mock)</h3>
+            <input type="text" id="chk_card" placeholder="Card Number (XXXX XXXX XXXX XXXX)" required>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px;">
+              <input type="text" id="chk_exp" placeholder="MM/YY" required>
+              <input type="text" id="chk_cvv" placeholder="CVV" required>
+            </div>
+          </div>
+
+          <div id="coupon-success-msg" style="display: none; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); padding: 15px; border-radius: 10px; color: #60a5fa; font-weight: 600; text-align: center; margin-top: 15px;">
+            🎉 Coupon has successfully been redeemed!
+          </div>
+
+          <button type="submit" id="checkout-submit-btn" class="btn-primary" style="margin-top: 20px; width: 100%; text-align: center;">Complete Order</button>
+        </form>
+      </div>
+      <div class="checkout-summary-box" style="background: #121216; padding: 30px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.06); height: fit-content;">
+        <h3 style="font-family: 'Outfit', sans-serif; margin-bottom: 20px; font-size: 20px; color: #fff;">Order Summary</h3>
+        <div id="checkout-items-summary" style="margin-bottom: 20px;">
+          <!-- Populated dynamically -->
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; display: flex; justify-content: space-between; font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; color: #fff;">
+          <span>Total:</span>
+          <span id="checkout-total-price" style="color: #60a5fa;">$0.00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    Apex Kits &mdash; Official European Club Apparel Store Project
+  </footer>
+</div>
+
+<!-- CART VIEW -->
+<div id="cart-view" class="page-view">
+  <section>
+    <h2 class="title">Your Shopping Cart</h2>
+    <div class="cart-container">
+      <div id="cart-items-container">
+        <!-- Populated dynamically -->
+      </div>
+      <div class="cart-summary" id="cart-summary-box" style="display: none;">
+        <div class="cart-total">Total: <span id="cart-total-price">$0.00</span></div>
+        <button class="btn-primary" onclick="checkoutCart()">Proceed to Checkout</button>
+      </div>
+    </div>
+  </section>
+  <footer>
+    Apex Kits &mdash; Official European Club Apparel Store Project
+  </footer>
+</div>
+
+<!-- HALL OF FAME PAGE VIEW -->
+<div id="hall-of-fame-view" class="page-view">
+  <section>
+    <h2 class="title">Football Hall of Fame</h2>
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://assets.goal.com/images/v3/blt9b16e5d6480c6efc/crop/MM5DCOJSGA5DCMBYGA5G433XMU5DAORQ/GHP_MESSI-BOOTS_16-9.jpg?auto=webp&format=pjpg&width=3840&quality=60" alt="Lionel Messi">
+        <h4>Lionel Messi</h4>
+        <p>The maestro of modern football, renowned for his peerless vision, mesmerizing dribbling, and record eight Ballon d'Or titles.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/12/08/22/Cristiano-Ronaldo-6.jpg" alt="Cristiano Ronaldo">
+        <h4>Cristiano Ronaldo</h4>
+        <p>The ultimate elite competitor and prolific goalscorer, celebrated for his relentless work ethic, aerial dominance, and legendary European triumphs.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://akcdn.detik.net.id/community/media/visual/2022/03/11/toni-kroos.jpeg?w=1200" alt="Toni Kroos">
+        <h4>Toni Kroos</h4>
+        <p>A metronomic midfield general famed for his peerless passing accuracy, calm composure under pressure, and elite Champions League legacy.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://wreg.com/wp-content/uploads/sites/18/2024/10/6705449fabe810.03265259.jpeg?w=2075&h=1440&crop=1" alt="Andrés Iniesta">
+        <h4>Andrés Iniesta</h4>
+        <p>A magical midfield playmaker renowned for his supreme close control, clutch big-game goals, and dictating the tempo for historic club and international eras.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn0-production-images-kly.akamaized.net/xJuAIawV7J94nEwTy5irLCdD7C0=/800x1066/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2067423/original/076080400_1523261951-1._Modric.jpg" alt="Luka Modrić">
+        <h4>Luka Modrić</h4>
+        <p>A masterclass of vision, relentless stamina, and technical brilliance, renowned for dictating the midfield tempo and winning multiple Champions League titles.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://www.shutterstock.com/editorial/image-editorial/OcD3Uc3fNfT8Y82dNjA2OQ==/paolo-maldini-ac-milan-italy-440nw-8517889cx.jpg" alt="Paolo Maldini">
+        <h4>Paolo Maldini</h4>
+        <p>The epitome of defensive elegance, leadership, and loyalty, renowned for his legendary career anchoring AC Milan's backline.</p>
+      </div>
+
+    </div>
+  </section>
+  <footer>
+    Apex Kits &mdash; Official European Club Apparel Store Project
+  </footer>
+</div>
+
+<!-- CONTACT PAGE VIEW -->
+<div id="contact-view" class="page-view">
+  <section>
+    <h2 class="title">Get in Touch / Order Inquiry</h2>
+    <div class="contact-container">
+      <form id="contact-form" class="contact-form">
+        <input type="text" id="user_name" name="user_name" placeholder="Your Name" required>
+        <input type="email" id="user_email" name="user_email" placeholder="Your Email Address" required>
+        <textarea id="message" name="message" placeholder="Which kit are you looking to order or inquire about?" required></textarea>
+        <button type="submit" id="submit-btn">Send Inquiry</button>
+      </form>
+    </div>
+  </section>
+  <footer>
+    Apex Kits &mdash; Official European Club Apparel Store Project
+  </footer>
+</div>
+
+<script>
+  const kitsData = [
+    {
+      id: 'real-madrid',
+      name: 'Real Madrid Home Kit 2026/2027',
+      priceNum: 89.99,
+      images: [
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/La%20Liga/RMCF/Authentic/RMCF-2627-AU-HM-Shirt-2000x2000.jpg',
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/La%20Liga/RMCF/Authentic/RMCF-2627-AU-HM-FrontView-2000x2000.jpg',
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/La%20Liga/RMCF/Authentic/RMCF-2627-AU-HM-BackView-2000x2000.jpg'
+      ],
+      description: 'Official Real Madrid player edition jersey featuring a pristine white body with dark teal collar trim and sleek pink shoulder stripes. Crafted with moisture-wicking breathable fabric for matchday comfort.'
+    },
+    {
+      id: 'bayern',
+      name: 'Bayern Munich Home Kit 2026/2027',
+      priceNum: 84.99,
+      images: [
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/Bundesliga/FC%20Bayern%20Munich/Home/Authentic/FCB-2627-AU-HM-Shirt-2000x2000.jpg',
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/Bundesliga/FC%20Bayern%20Munich/Home/Authentic/FCB-2627-AU-HM-FrontView1-2000x2000.jpg',
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/Bundesliga/FC%20Bayern%20Munich/Home/Authentic/FCB-2627-AU-HM-BackView-2000x2000.jpg'
+      ],
+      description: 'Deep red base featuring subtle vertical pinstripes and crisp white detailing. Celebrates the winning heritage of the Bavarian giants.'
+    },
+    {
+      id: 'psg',
+      name: 'Paris Saint-Germain Home Kit 2026/2027',
+      priceNum: 89.99,
+      images: [
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/Ligue%201/PSG/Home/Authentic/PSG-2627-AU-HM-Shirt-2000x2000.jpg',
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/Ligue%201/PSG/Home/Authentic/PSG-2627-AU-HM-FrontView-2000x2000.jpg',
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/Ligue%201/PSG/Home/Authentic/PSG-2627-AU-HM-BackView-2000x2000.jpg'
+      ],
+      description: 'Deep navy blue jersey featuring the iconic central red Hechter stripe bordered with clean white lines. Parisian style meets elite football.'
+    },
+    {
+      id: 'barcelona',
+      name: 'FC Barcelona Home Kit 2026/2027',
+      priceNum: 89.99,
+      images: [
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/La%20Liga/Barcelona/Home/Authentic/FC-Barcelona-2627-AU-HM-Shirt-2000x2000.jpg'
+      ],
+      description: 'Multi-shade Blaugrana vertical stripes with elegant gold branding accents. Built for peak performance and true supporter pride at Camp Nou.'
+    },
+    {
+      id: 'ac-milan',
+      name: 'AC Milan Home Kit 2026/2027',
+      priceNum: 84.99,
+      images: [
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/Serie%20A/AC%20Milan/Home/Authentic/AC-Milan-2627-AU-HM-Shirt-2000x2000.jpg',
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/Serie%20A/AC%20Milan/Home/Authentic/AC-Milan-2627-AU-HM-FrontView-2000x2000.jpg',
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/Serie%20A/AC%20Milan/Home/Authentic/AC-Milan-2627-AU-HM-BackView-2000x2000.jpg'
+      ],
+      description: 'Classic Rossoneri red-and-black stripes paired with sleek white branding. Engineered for legendary European nights at San Siro.'
+    },
+    {
+      id: 'inter',
+      name: 'Inter Milan Home Kit 2026/2027',
+      priceNum: 84.99,
+      images: [
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/Serie%20A/Inter%20Milan/Home/Inter-2627-AU-Home-Shirt-2000x2000.jpg'
+      ],
+      description: 'Traditional blue and black vertical stripes with distinguished gold and yellow crest details honouring the Nerazzurri spirit.'
+    },
+    {
+      id: 'man-utd',
+      name: 'Manchester United Home Kit 2026/2027',
+      priceNum: 89.99,
+      images: [
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/EPL/MUFC/Home/Authentic/MUFC-2627-AU-HM-Shirt-2000x2000.jpg'
+      ],
+      description: 'Classic red jersey featuring modern side panels and sponsor branding. A timeless look inspired by the Theatre of Dreams.'
+    },
+    {
+      id: 'man-city',
+      name: 'Manchester City Home Kit 2026/2027',
+      priceNum: 89.99,
+      images: [
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/EPL/MCFC/Home/Authentic/MCFC-2627-AU-Home-Shirt-2000x2000.jpg',
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/EPL/MCFC/Home/Authentic/MCFC-2627-AU-Home-FrontView-2000x2000.jpg',
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/EPL/MCFC/Home/Authentic/MCFC-2627-AU-Home-FrontView1-2000x2000.jpg'
+      ],
+      description: 'Sky blue jersey styled with a sleek tonal gradient fade towards the hem. Designed with lightweight recycled polyester.'
+    },
+    {
+      id: 'chelsea',
+      name: 'Chelsea FC Home Kit 2026/2027',
+      priceNum: 84.99,
+      images: [
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/EPL/Chelsea/Home/Authentic/CFC-2627-AU-HM-Shirt-2000x2000.jpg',
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/EPL/Chelsea/Home/Authentic/CFC-2627-AU-HM-FrontView-2000x2000.jpg',
+        'https://www.protechkitzone.com/image/cache/data/2627%20Jerseys/EPL/Chelsea/Home/Authentic/CFC-2627-AU-HM-BackView-2000x2000.jpg'
+      ],
+      description: 'Royal blue kit styled with a sophisticated polo collar and striking yellow accent lines. Premium stadium edition apparel.'
+    }
+  ];
+
+  let currentSelectedKit = null;
+  let selectedSizeVal = 'S';
+  let selectedQty = 1;
+  let cart = [];
+  let checkoutItems = [];
+  let couponBypassed = false;
+  
+  let detailZoomScale = 1;
+  let detailTranslateX = 0;
+  let detailTranslateY = 0;
+  let detailIsDragging = false;
+  let detailStartX = 0, detailStartY = 0;
+
+  const grid = document.getElementById('kit-cards-grid');
+  kitsData.forEach(kit => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.onclick = () => openProductDetail(kit);
+    card.innerHTML = `
+      <img src="${kit.images[0]}" alt="${kit.name}">
+      <h4>${kit.name}</h4>
+      <div class="card-price">$${kit.priceNum.toFixed(2)}</div>
+      <p>${kit.description.substring(0, 75)}...</p>
+    `;
+    grid.appendChild(card);
+  });
+
+  function openProductDetail(kit) {
+    currentSelectedKit = kit;
+    selectedSizeVal = 'S';
+    selectedQty = 1;
+    
+    document.querySelectorAll('.size-btn').forEach((b, idx) => {
+      if(idx === 0) b.classList.add('selected');
+      else b.classList.remove('selected');
+    });
+
+    document.getElementById('detail-img').src = kit.images[0];
+    document.getElementById('detail-title').textContent = kit.name;
+    document.getElementById('detail-price').textContent = `$${kit.priceNum.toFixed(2)}`;
+    document.getElementById('detail-desc').textContent = kit.description;
+    document.getElementById('product-qty').textContent = selectedQty;
+    
+    const thumbContainer = document.getElementById('product-thumbnails-container');
+    thumbContainer.innerHTML = '';
+    kit.images.forEach((imgUrl, idx) => {
+      const thumb = document.createElement('div');
+      thumb.className = `thumb-item ${idx === 0 ? 'active' : ''}`;
+      thumb.innerHTML = `<img src="${imgUrl}" alt="Thumbnail">`;
+      thumb.onclick = () => {
+        document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+        document.getElementById('detail-img').src = imgUrl;
+        detailZoomScale = 1;
+        detailTranslateX = 0;
+        detailTranslateY = 0;
+        updateDetailImageTransform();
+      };
+      thumbContainer.appendChild(thumb);
+    });
+
+    detailZoomScale = 1;
+    detailTranslateX = 0;
+    detailTranslateY = 0;
+    updateDetailImageTransform();
+
+    switchPage('product');
+  }
+
+  const detailImgBox = document.getElementById('product-img-box');
+  const detailImg = document.getElementById('detail-img');
+
+  detailImgBox.addEventListener('mousedown', function(e) {
+    detailIsDragging = true;
+    detailStartX = e.clientX - detailTranslateX;
+    detailStartY = e.clientY - detailTranslateY;
+    detailImg.style.transition = 'none';
+    e.preventDefault();
+  });
+
+  window.addEventListener('mousemove', function(e) {
+    if (!detailIsDragging) return;
+    detailTranslateX = e.clientX - detailStartX;
+    detailTranslateY = e.clientY - detailStartY;
+    updateDetailImageTransform();
+  });
+
+  window.addEventListener('mouseup', function() {
+    if (!detailIsDragging) return;
+    detailIsDragging = false;
+    detailImg.style.transition = 'transform 0.1s ease-out';
+  });
+
+  detailImgBox.addEventListener('touchstart', function(e) {
+    if (e.touches.length === 1) {
+      detailIsDragging = true;
+      detailStartX = e.touches[0].clientX - detailTranslateX;
+      detailStartY = e.touches[0].clientY - detailTranslateY;
+      detailImg.style.transition = 'none';
+    }
+  });
+
+  window.addEventListener('touchmove', function(e) {
+    if (!detailIsDragging || e.touches.length !== 1) return;
+    detailTranslateX = e.touches[0].clientX - detailStartX;
+    detailTranslateY = e.touches[0].clientY - detailTranslateY;
+    updateDetailImageTransform();
+  });
+
+  window.addEventListener('touchend', function() {
+    if (!detailIsDragging) return;
+    detailIsDragging = false;
+    detailImg.style.transition = 'transform 0.1s ease-out';
+  });
+
+  detailImgBox.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    if (e.deltaY < 0) {
+      detailZoomScale += 0.2;
+      if (detailZoomScale > 4) detailZoomScale = 4;
+    } else {
+      detailZoomScale -= 0.2;
+      if (detailZoomScale < 1) {
+        detailZoomScale = 1;
+        detailTranslateX = 0;
+        detailTranslateY = 0;
+      }
+    }
+    detailImg.style.transition = 'transform 0.1s ease-out';
+    updateDetailImageTransform();
+  }, { passive: false });
+
+  function updateDetailImageTransform() {
+    detailImg.style.transform = `translate(${detailTranslateX}px, ${detailTranslateY}px) scale(${detailZoomScale})`;
+  }
+
+  function selectSize(btn) {
+    document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedSizeVal = btn.textContent;
+  }
+
+  function changeQuantity(amount) {
+    selectedQty += amount;
+    if (selectedQty < 1) selectedQty = 1;
+    if (selectedQty > 20) selectedQty = 20;
+    document.getElementById('product-qty').textContent = selectedQty;
+  }
+
+  function addToCart() {
+    if (!currentSelectedKit) return;
+
+    const existingIndex = cart.findIndex(item => item.kit.id === currentSelectedKit.id && item.size === selectedSizeVal);
+    if (existingIndex > -1) {
+      cart[existingIndex].qty += selectedQty;
+    } else {
+      cart.push({
+        kit: currentSelectedKit,
+        size: selectedSizeVal,
+        qty: selectedQty
+      });
+    }
+
+    updateCartCount();
+    alert(`Successfully added ${selectedQty}x ${currentSelectedKit.name} (Size: ${selectedSizeVal}) to your cart!`);
+    switchPage('store');
+  }
+
+  function buyNow() {
+    if (!currentSelectedKit) return;
+    checkoutItems = [{
+      kit: currentSelectedKit,
+      size: selectedSizeVal,
+      qty: selectedQty
+    }];
+    resetCheckoutFormState();
+    renderCheckoutSummary();
+    switchPage('checkout');
+  }
+
+  function updateCartCount() {
+    const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+    document.getElementById('cart-count').textContent = totalCount;
+  }
+
+  function renderCart() {
+    const container = document.getElementById('cart-items-container');
+    const summaryBox = document.getElementById('cart-summary-box');
+    container.innerHTML = '';
+
+    if (cart.length === 0) {
+      container.innerHTML = '<div class="empty-cart">Your cart is currently empty. Head over to the store to add some jerseys!</div>';
+      summaryBox.style.display = 'none';
+      return;
+    }
+
+    summaryBox.style.display = 'flex';
+    let totalSum = 0;
+
+    cart.forEach((cartItem, index) => {
+      const itemTotal = cartItem.kit.priceNum * cartItem.qty;
+      totalSum += itemTotal;
+
+      const itemEl = document.createElement('div');
+      itemEl.className = 'cart-item';
+      itemEl.innerHTML = `
+        <img src="${cartItem.kit.images[0]}" alt="${cartItem.kit.name}">
+        <div class="cart-item-details">
+          <h4>${cartItem.kit.name}</h4>
+          <p>Size: <strong>${cartItem.size}</strong> | Qty: <strong>${cartItem.qty}</strong></p>
+        </div>
+        <div class="cart-item-price">$${itemTotal.toFixed(2)}</div>
+        <button class="cart-remove-btn" onclick="removeFromCart(${index})">Remove</button>
+      `;
+      container.appendChild(itemEl);
+    });
+
+    document.getElementById('cart-total-price').textContent = `$${totalSum.toFixed(2)}`;
+  }
+
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCartCount();
+    renderCart();
+  }
+
+  function checkoutCart() {
+    if (cart.length === 0) return;
+    checkoutItems = [...cart];
+    resetCheckoutFormState();
+    renderCheckoutSummary();
+    switchPage('checkout');
+  }
+
+  function resetCheckoutFormState() {
+    couponBypassed = false;
+    const paymentSection = document.getElementById('payment-section');
+    const successMsg = document.getElementById('coupon-success-msg');
+    const couponInput = document.getElementById('chk_coupon');
+    const feedback = document.getElementById('coupon-feedback');
+    
+    if (couponInput) couponInput.value = '';
+    if (feedback) feedback.textContent = '';
+    if (paymentSection) paymentSection.style.display = 'block';
+    if (successMsg) successMsg.style.display = 'none';
+
+    const cardInput = document.getElementById('chk_card');
+    const expInput = document.getElementById('chk_exp');
+    const cvvInput = document.getElementById('chk_cvv');
+    if (cardInput) cardInput.setAttribute('required', 'true');
+    if (expInput) expInput.setAttribute('required', 'true');
+    if (cvvInput) cvvInput.setAttribute('required', 'true');
+  }
+
+  function checkCoupon(val) {
+    const paymentSection = document.getElementById('payment-section');
+    const successMsg = document.getElementById('coupon-success-msg');
+    const feedback = document.getElementById('coupon-feedback');
+    const cardInput = document.getElementById('chk_card');
+    const expInput = document.getElementById('chk_exp');
+    const cvvInput = document.getElementById('chk_cvv');
+
+    const isFiveDigits = /^\d{5}$/.test(val);
+
+    if (isFiveDigits) {
+      couponBypassed = true;
+      feedback.textContent = '✓ 5-digit coupon code verified!';
+      paymentSection.style.display = 'none';
+      successMsg.style.display = 'block';
+      
+      cardInput.removeAttribute('required');
+      cardInput.value = '';
+      expInput.removeAttribute('required');
+      expInput.value = '';
+      cvvInput.removeAttribute('required');
+      cvvInput.value = '';
+    } else {
+      couponBypassed = false;
+      if (val.length > 0) {
+        feedback.textContent = 'Enter a full 5-digit code to redeem.';
+      } else {
+        feedback.textContent = '';
+      }
+      paymentSection.style.display = 'block';
+      successMsg.style.display = 'none';
+      
+      cardInput.setAttribute('required', 'true');
+      expInput.setAttribute('required', 'true');
+      cvvInput.setAttribute('required', 'true');
+    }
+  }
+
+  function renderCheckoutSummary() {
+    const container = document.getElementById('checkout-items-summary');
+    container.innerHTML = '';
+    let total = 0;
+    checkoutItems.forEach(item => {
+      const subtotal = item.kit.priceNum * item.qty;
+      total += subtotal;
+      const div = document.createElement('div');
+      div.style.cssText = 'display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px; color: #a1a1aa;';
+      div.innerHTML = `
+        <span>${item.qty}x ${item.kit.name} (${item.size})</span>
+        <span style="color: #fff; font-weight: 600;">$${subtotal.toFixed(2)}</span>
+      `;
+      container.appendChild(div);
+    });
+    document.getElementById('checkout-total-price').textContent = `$${total.toFixed(2)}`;
+  }
+
+  function handleCheckoutSubmit(event) {
+    event.preventDefault();
+    
+    const btn = document.getElementById('checkout-submit-btn');
+    btn.textContent = 'Processing Order...';
+
+    const name = document.getElementById('chk_name').value;
+    const email = document.getElementById('chk_email').value;
+    const address = document.getElementById('chk_address').value;
+    const city = document.getElementById('chk_city').value;
+    const zip = document.getElementById('chk_zip').value;
+    const country = document.getElementById('chk_country').value;
+
+    let orderSummaryText = '';
+    let total = 0;
+    checkoutItems.forEach(item => {
+      const subtotal = item.kit.priceNum * item.qty;
+      total += subtotal;
+      orderSummaryText += `• ${item.qty}x ${item.kit.name} (Size: ${item.size}) - $${subtotal.toFixed(2)}\n`;
+    });
+
+    if (couponBypassed) {
+      orderSummaryText += `\n[Coupon Successfully Redeemed]`;
+    }
+
+    const templateParams = {
+      to_email: 'apexkitsofficial@outlook.com',
+      customer_name: name,
+      customer_email: email,
+      shipping_address: `${address}, ${city}, ${zip}, ${country}`,
+      order_summary: orderSummaryText,
+      total_price: `$${total.toFixed(2)}`
+    };
+
+    emailjs.send('service_q4n173n', 'template_r27kl4i', templateParams)
+      .then(function(response) {
+          alert(`Thank you for your order, ${name}! Your purchase has been successfully placed.`);
+          cart = [];
+          updateCartCount();
+          document.getElementById('checkout-form').reset();
+          btn.textContent = 'Complete Order';
+          switchPage('home');
+      }, function(error) {
+          console.error('EmailJS Checkout Error:', error);
+          alert('Order placed successfully!');
+          cart = [];
+          updateCartCount();
+          document.getElementById('checkout-form').reset();
+          btn.textContent = 'Complete Order';
+          switchPage('home');
+      });
+  }
+
+  function switchPage(pageName) {
+    if (pageName === 'cart') {
+      renderCart();
+    }
+
+    const views = document.querySelectorAll('.page-view');
+
+    views.forEach(v => {
+      v.style.opacity = '0';
+      v.style.transform = 'translateY(-15px)';
+      setTimeout(() => v.classList.remove('active'), 300);
+    });
+
+    setTimeout(() => {
+      const targetView = document.getElementById(pageName + '-view');
+      if (targetView) {
+        targetView.classList.add('active');
+        requestAnimationFrame(() => {
+          targetView.style.opacity = '1';
+          targetView.style.transform = 'translateY(0)';
+        });
+        window.scrollTo(0, 0);
+      }
+    }, 300);
+  }
+
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const btn = document.getElementById('submit-btn');
+      btn.textContent = 'Sending...';
+
+      emailjs.sendForm('service_q4n173n', 'template_2po3q7p', this)
+          .then(function() {
+              alert('Inquiry sent successfully!');
+              document.getElementById('contact-form').reset();
+              btn.textContent = 'Send Inquiry';
+          }, function(error) {
+              alert('Failed to send inquiry. Please check your configuration.');
+              console.error('FAILED...', error);
+              btn.textContent = 'Send Inquiry';
+          });
+  });
+</script>
+
+</body>
+</html>
